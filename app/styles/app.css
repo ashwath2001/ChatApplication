@@ -1,0 +1,19 @@
+.msg{
+        text-align: left;
+		width: 700px;
+		height: 550px;
+		border: 2px black solid;
+		overflow: scroll;
+        background-color: aquamarine;
+        color: black;
+}
+/* .received{
+    ;
+} */
+.msgsend{
+    text-align: right;
+    width: 400px;
+    height: 200px;
+    border: 2px black solid;
+    overflow: scroll;
+}

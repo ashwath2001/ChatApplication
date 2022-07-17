@@ -1,0 +1,40 @@
+<center>
+<h1>WelCome TO Z-Chat</h1>
+
+
+    <div class="msg" id="ToTop">
+        <span id="sample" class="received"></span>
+    </div>
+    <input type="text" id="msg" class="input" size="70px" {{on "input" enable}}>
+    <button class="button" id="Btn" {{on "click" send}} disabled>send</button>
+</center>
+
+<script type="text/javascript">
+
+   setInterval(function () { getMessage() }, 1000);
+
+
+    function getMessage() {
+        var url = "ReadMessage";
+         
+        var request = new XMLHttpRequest();
+        try {
+            request.onreadystatechange = function () {
+                if (this.readyState === 4) {
+                    var val = this.responseText;
+                    
+                    document.getElementById('sample').innerHTML = val;
+
+                }
+            }
+            request.open("GET", url, true);
+            request.send();
+        }
+        catch (e) {
+            alert("Unable to connect to server");
+        }
+        var elem1 = document.getElementById('ToTop');
+            elem1.scrollTop = elem1.scrollHeight;
+    }
+
+</script>
